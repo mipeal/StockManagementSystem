@@ -82,6 +82,12 @@
     <Compile Include="StockOutUI.Designer.cs">
       <DependentUpon>StockOutUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSalesByDatesUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSalesByDatesUI.Designer.cs">
+      <DependentUpon>ViewSalesByDatesUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CategorySetupUI.resx">
       <DependentUpon>CategorySetupUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockOutUI.resx">
       <DependentUpon>StockOutUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSalesByDatesUI.resx">
+      <DependentUpon>ViewSalesByDatesUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
