@@ -70,6 +70,12 @@
     <Compile Include="StockInUI.Designer.cs">
       <DependentUpon>StockInUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockOutUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockOutUI.Designer.cs">
+      <DependentUpon>StockOutUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CategorySetupUI.resx">
       <DependentUpon>CategorySetupUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="StockInUI.resx">
       <DependentUpon>StockInUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockOutUI.resx">
+      <DependentUpon>StockOutUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
