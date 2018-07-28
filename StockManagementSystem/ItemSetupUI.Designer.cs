@@ -129,7 +129,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ItemSetupUI";
-            this.Text = "ItemSetupUI";
+            this.Text = "Item Setup";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -82,7 +82,7 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "CompanySetupUI";
-            this.Text = "CompanySetupUI";
+            this.Text = "Company Setup";
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
