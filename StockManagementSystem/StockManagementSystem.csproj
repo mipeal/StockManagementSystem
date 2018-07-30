@@ -44,62 +44,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategorySetupUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CategorySetupUI.Designer.cs">
-      <DependentUpon>CategorySetupUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompanySetupUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CompanySetupUI.Designer.cs">
-      <DependentUpon>CompanySetupUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ItemSetupUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemSetupUI.Designer.cs">
-      <DependentUpon>ItemSetupUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ItemsSummaryUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemsSummaryUI.Designer.cs">
-      <DependentUpon>ItemsSummaryUI.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StockInUI.cs">
+    <Compile Include="UI\Inventory\ItemSummaryUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockInUI.Designer.cs">
+    <Compile Include="UI\Inventory\ItemSummaryUI.Designer.cs">
+      <DependentUpon>ItemSummaryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\StockInUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\StockInUI.Designer.cs">
       <DependentUpon>StockInUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockOutUI.cs">
+    <Compile Include="UI\Inventory\StockOutUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockOutUI.Designer.cs">
+    <Compile Include="UI\Inventory\StockOutUI.Designer.cs">
       <DependentUpon>StockOutUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewSalesByDatesUI.cs">
+    <Compile Include="UI\Inventory\ViewSalesByDates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewSalesByDatesUI.Designer.cs">
-      <DependentUpon>ViewSalesByDatesUI.cs</DependentUpon>
+    <Compile Include="UI\Inventory\ViewSalesByDates.Designer.cs">
+      <DependentUpon>ViewSalesByDates.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CategorySetupUI.resx">
+    <Compile Include="UI\ItemSetup\CategorySetupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ItemSetup\CategorySetupUI.Designer.cs">
       <DependentUpon>CategorySetupUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CompanySetupUI.resx">
+    </Compile>
+    <Compile Include="UI\ItemSetup\CompanySetupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ItemSetup\CompanySetupUI.Designer.cs">
       <DependentUpon>CompanySetupUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemSetupUI.resx">
+    </Compile>
+    <Compile Include="UI\ItemSetup\ItemSetupUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ItemSetup\ItemSetupUI.Designer.cs">
       <DependentUpon>ItemSetupUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemsSummaryUI.resx">
-      <DependentUpon>ItemsSummaryUI.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,14 +100,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StockInUI.resx">
+    <EmbeddedResource Include="UI\Inventory\ItemSummaryUI.resx">
+      <DependentUpon>ItemSummaryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\StockInUI.resx">
       <DependentUpon>StockInUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockOutUI.resx">
+    <EmbeddedResource Include="UI\Inventory\StockOutUI.resx">
       <DependentUpon>StockOutUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewSalesByDatesUI.resx">
-      <DependentUpon>ViewSalesByDatesUI.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Inventory\ViewSalesByDates.resx">
+      <DependentUpon>ViewSalesByDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ItemSetup\CategorySetupUI.resx">
+      <DependentUpon>CategorySetupUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ItemSetup\CompanySetupUI.resx">
+      <DependentUpon>CompanySetupUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ItemSetup\ItemSetupUI.resx">
+      <DependentUpon>ItemSetupUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

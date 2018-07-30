@@ -1,6 +1,6 @@
-﻿namespace StockManagementSystem
+﻿namespace StockManagementSystem.UI.ItemSetup
 {
-    partial class CompanySetupUI
+    partial class CategorySetupUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.companyDataGridView = new System.Windows.Forms.DataGridView();
+            this.categoryDataGridView = new System.Windows.Forms.DataGridView();
             this.SaveButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // companyDataGridView
+            // categoryDataGridView
             // 
-            this.companyDataGridView.AllowUserToAddRows = false;
-            this.companyDataGridView.AllowUserToDeleteRows = false;
-            this.companyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.companyDataGridView.Location = new System.Drawing.Point(47, 111);
-            this.companyDataGridView.Name = "companyDataGridView";
-            this.companyDataGridView.ReadOnly = true;
-            this.companyDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.companyDataGridView.Size = new System.Drawing.Size(326, 150);
-            this.companyDataGridView.TabIndex = 7;
+            this.categoryDataGridView.AllowUserToAddRows = false;
+            this.categoryDataGridView.AllowUserToDeleteRows = false;
+            this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoryDataGridView.Location = new System.Drawing.Point(56, 101);
+            this.categoryDataGridView.Name = "categoryDataGridView";
+            this.categoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.categoryDataGridView.Size = new System.Drawing.Size(326, 150);
+            this.categoryDataGridView.TabIndex = 7;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(298, 66);
+            this.SaveButton.Location = new System.Drawing.Point(307, 56);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 6;
@@ -58,7 +57,7 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(102, 40);
+            this.nameTextBox.Location = new System.Drawing.Point(111, 30);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(271, 20);
             this.nameTextBox.TabIndex = 5;
@@ -66,24 +65,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 43);
+            this.label1.Location = new System.Drawing.Point(53, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Name";
             // 
-            // CompanySetupUI
+            // CategorySetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 313);
-            this.Controls.Add(this.companyDataGridView);
+            this.ClientSize = new System.Drawing.Size(434, 300);
+            this.Controls.Add(this.categoryDataGridView);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
-            this.Name = "CompanySetupUI";
-            this.Text = "Company Setup";
-            ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
+            this.Name = "CategorySetupUI";
+            this.Text = "Category Setup ";
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,7 +90,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView companyDataGridView;
+        private System.Windows.Forms.DataGridView categoryDataGridView;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StockManagementSystem
+namespace StockManagementSystem.UI.Inventory
 {
-    public partial class CategorySetupUI : Form
+    public partial class ViewSalesByDates : Form
     {
-        public CategorySetupUI()
+        public ViewSalesByDates()
         {
             InitializeComponent();
         }
