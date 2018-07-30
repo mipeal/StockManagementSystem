@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\InventoryModels\Inventory.cs" />
+    <Compile Include="Models\InventoryModels\StockOutTypes.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
