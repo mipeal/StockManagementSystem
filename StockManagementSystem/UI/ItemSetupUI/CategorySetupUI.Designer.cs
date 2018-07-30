@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.categoryDataGridView = new System.Windows.Forms.DataGridView();
             this.SaveButton = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // categoryDataGridView
@@ -42,6 +45,7 @@
             this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryDataGridView.Location = new System.Drawing.Point(56, 101);
             this.categoryDataGridView.Name = "categoryDataGridView";
+            this.categoryDataGridView.ReadOnly = true;
             this.categoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.categoryDataGridView.Size = new System.Drawing.Size(326, 150);
             this.categoryDataGridView.TabIndex = 7;
@@ -54,6 +58,7 @@
             this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // nameTextBox
             // 
@@ -71,6 +76,10 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Name";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // CategorySetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,6 +92,7 @@
             this.Name = "CategorySetupUI";
             this.Text = "Category Setup ";
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,5 +104,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
