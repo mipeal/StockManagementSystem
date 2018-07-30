@@ -13,7 +13,7 @@ namespace StockManagementSystem.Models.InventoryModels
         public int StockAvailable { get; set; }
         public int StockTransaction { get; set; }
         public int StockType { get; set; }
-        public int StockOutType { get; set; }
+        public StockOutTypes StockOutType { get; set; }
         public DateTime TransactionDate { get => DateTime.Now; }
 
     }
