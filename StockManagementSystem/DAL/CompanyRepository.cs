@@ -16,7 +16,7 @@ namespace StockManagementSystem.DAL
         SqlConnection _connection = new SqlConnection(connectionString);
         public bool Add(Company company)
         {
-            string query = @"INSERT INTO [dbo].[Companies]  ([Name]) VALUES('" + category.Name + "')";
+            string query = @"INSERT INTO [dbo].[Companies]  ([Name]) VALUES('" + company.Name + "')";
 
             SqlCommand command = new SqlCommand(query, _connection);
 
