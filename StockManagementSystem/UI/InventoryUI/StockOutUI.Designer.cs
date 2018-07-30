@@ -1,4 +1,4 @@
-﻿namespace StockManagementSystem.UI.Inventory
+﻿namespace StockManagementSystem.UI.InventoryUI
 {
     partial class StockOutUI
     {
@@ -74,6 +74,7 @@
             this.SellButton.TabIndex = 53;
             this.SellButton.Text = "Sell";
             this.SellButton.UseVisualStyleBackColor = true;
+            this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
             // dataGridView1
             // 

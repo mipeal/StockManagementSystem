@@ -1,4 +1,4 @@
-﻿namespace StockManagementSystem.UI.Inventory
+﻿namespace StockManagementSystem.UI.InventoryUI
 {
     partial class StockInUI
     {

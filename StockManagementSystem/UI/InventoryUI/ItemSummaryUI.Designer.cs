@@ -1,6 +1,6 @@
-﻿namespace StockManagementSystem.UI.Inventory
+﻿namespace StockManagementSystem.UI.InventoryUI
 {
-    partial class ViewSalesByDates
+    partial class ItemSummaryUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.fromDatePicker = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.companyComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toDatePicker
-            // 
-            this.toDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.toDatePicker.Location = new System.Drawing.Point(419, 39);
-            this.toDatePicker.Name = "toDatePicker";
-            this.toDatePicker.Size = new System.Drawing.Size(100, 20);
-            this.toDatePicker.TabIndex = 36;
-            this.toDatePicker.Value = new System.DateTime(2018, 7, 28, 0, 0, 0, 0);
-            // 
-            // fromDatePicker
-            // 
-            this.fromDatePicker.CustomFormat = "mm/dd/yyyy";
-            this.fromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fromDatePicker.Location = new System.Drawing.Point(288, 39);
-            this.fromDatePicker.Name = "fromDatePicker";
-            this.fromDatePicker.Size = new System.Drawing.Size(99, 20);
-            this.fromDatePicker.TabIndex = 35;
-            this.fromDatePicker.Value = new System.DateTime(2018, 7, 28, 0, 0, 0, 0);
             // 
             // dataGridView1
             // 
@@ -73,37 +54,53 @@
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             // 
+            // companyComboBox
+            // 
+            this.companyComboBox.FormattingEnabled = true;
+            this.companyComboBox.Location = new System.Drawing.Point(320, 43);
+            this.companyComboBox.Name = "companyComboBox";
+            this.companyComboBox.Size = new System.Drawing.Size(211, 21);
+            this.companyComboBox.TabIndex = 38;
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(320, 12);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(211, 21);
+            this.categoryComboBox.TabIndex = 37;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(252, 45);
+            this.label2.Location = new System.Drawing.Point(237, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "From";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Company";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(393, 39);
+            this.label1.Location = new System.Drawing.Point(239, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "To";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Category";
             // 
-            // ViewSalesByDates
+            // ItemSummaryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.toDatePicker);
-            this.Controls.Add(this.fromDatePicker);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.companyComboBox);
+            this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ViewSalesByDates";
-            this.Text = "View Sales Between Two Dates";
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.SearchButton);
+            this.Name = "ItemSummaryUI";
+            this.Text = "Item Summary View";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,11 +108,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker toDatePicker;
-        private System.Windows.Forms.DateTimePicker fromDatePicker;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.ComboBox companyComboBox;
+        private System.Windows.Forms.ComboBox categoryComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

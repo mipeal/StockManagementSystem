@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StockManagementSystem.UI.Inventory
+namespace StockManagementSystem.UI.InventoryUI
 {
     public partial class ViewSalesByDates : Form
     {
