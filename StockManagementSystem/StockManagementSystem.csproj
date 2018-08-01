@@ -46,8 +46,10 @@
   <ItemGroup>
     <Compile Include="BLL\CategoryManager.cs" />
     <Compile Include="BLL\CompanyManager.cs" />
+    <Compile Include="BLL\ItemManager.cs" />
     <Compile Include="DAL\CategoryRepository.cs" />
     <Compile Include="DAL\CompanyRepository.cs" />
+    <Compile Include="DAL\ItemRepository.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\InventoryModels\Inventory.cs" />

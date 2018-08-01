@@ -15,9 +15,13 @@ namespace StockManagementSystem.UI.ItemSetup
     public partial class CompanySetupUI : Form
     {
         CompanyManager _manager = new CompanyManager();
+        private DataTable _dataTable;
         public CompanySetupUI()
         {
             InitializeComponent();
+
+            _dataTable = _manager.GetCompanies();
+            companyDataGridView.DataSource = _dataTable;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -34,8 +38,9 @@ namespace StockManagementSystem.UI.ItemSetup
                 bool isAdded = _manager.Add(company);
                 if (isAdded)
                 {
-                    DataTable dataTable = _manager.GetCompanies();
-                    companyDataGridView.DataSource = dataTable;
+                    Reset(this.Controls);
+                    _dataTable = _manager.GetCompanies();
+                    companyDataGridView.DataSource = _dataTable;
                 }
                 else
                 {
@@ -45,6 +50,18 @@ namespace StockManagementSystem.UI.ItemSetup
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void Reset(Control.ControlCollection cc)
+        {
+            foreach (Control ctrl in cc)
+            {
+                TextBox tb = ctrl as TextBox;
+                if (tb != null)
+                    tb.Text = "";
+                else
+                    Reset(ctrl.Controls);
             }
         }
     }

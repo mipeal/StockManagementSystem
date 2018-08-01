@@ -29,5 +29,16 @@ namespace StockManagementSystem.BLL
             DataTable dataTable = _repository.GetCategories();
             return dataTable;
         }
+
+        public bool Update(Category category)
+        {
+            if (category.Name.Length < 2 && category.Id > 0 && category == null)
+            {
+                throw new Exception("Sorry, Invalid Name & ID Inserted!");
+            }
+
+            bool isAdded = _repository.Update(category);
+            return isAdded;
+        }
     }
 }

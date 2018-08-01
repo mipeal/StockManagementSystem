@@ -11,9 +11,9 @@ namespace StockManagementSystem.DAL
 {
     class CategoryRepository
     {
-        private static string connectionString = @"server=DESKTOP-S6EBN26\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
+        private static string _connectionString = @"server=PC-301-04\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
 
-        SqlConnection _connection = new SqlConnection(connectionString);
+        SqlConnection _connection = new SqlConnection(_connectionString);
         public bool Add(Category category)
         {
             string query = @"INSERT INTO [dbo].[Categories]  ([Name]) VALUES('" + category.Name + "')";
@@ -35,7 +35,7 @@ namespace StockManagementSystem.DAL
 
         public DataTable GetCategories()
         {
-            string query = @"SELECT * FROM AllCategories";
+            string query = @"SELECT * FROM Categories";
 
             SqlCommand command = new SqlCommand(query, _connection);
 
@@ -50,6 +50,25 @@ namespace StockManagementSystem.DAL
             sqlDataAdapter.Fill(dataTable);
 
             return dataTable;
+        }
+
+        public bool Update(Category category)
+        {
+            string query = @"UPDATE [dbo].[Categories] SET [Name] ='"+category.Name+"' WHERE [Id]='"+category.Id+"'";
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            bool isAdded = command.ExecuteNonQuery() > 0;
+
+            _connection.Close();
+
+            if (isAdded)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

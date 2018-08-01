@@ -34,6 +34,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.gridMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -44,11 +46,14 @@
             this.categoryDataGridView.AllowUserToDeleteRows = false;
             this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryDataGridView.Location = new System.Drawing.Point(56, 101);
+            this.categoryDataGridView.MultiSelect = false;
             this.categoryDataGridView.Name = "categoryDataGridView";
             this.categoryDataGridView.ReadOnly = true;
             this.categoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.categoryDataGridView.Size = new System.Drawing.Size(326, 150);
             this.categoryDataGridView.TabIndex = 7;
+            this.categoryDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryDataGridView_CellDoubleClick);
+            this.categoryDataGridView.MouseHover += new System.EventHandler(this.categoryDataGridView_MouseHover);
             // 
             // SaveButton
             // 
@@ -80,11 +85,33 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(307, 56);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(75, 23);
+            this.UpdateButton.TabIndex = 8;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // gridMessage
+            // 
+            this.gridMessage.AutoSize = true;
+            this.gridMessage.ForeColor = System.Drawing.Color.Red;
+            this.gridMessage.Location = new System.Drawing.Point(118, 268);
+            this.gridMessage.Name = "gridMessage";
+            this.gridMessage.Size = new System.Drawing.Size(0, 13);
+            this.gridMessage.TabIndex = 9;
+            this.gridMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // CategorySetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 300);
+            this.Controls.Add(this.gridMessage);
+            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.categoryDataGridView);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.nameTextBox);
@@ -105,5 +132,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Label gridMessage;
     }
 }
