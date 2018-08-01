@@ -36,7 +36,7 @@
             this.stockOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +44,7 @@
             // indexMenuStrip
             // 
             this.indexMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
             this.addCompanyToolStripMenuItem,
             this.addCategoryToolStripMenuItem,
             this.addItemToolStripMenuItem,
@@ -51,11 +52,10 @@
             this.stockOutToolStripMenuItem,
             this.itemSummaryToolStripMenuItem,
             this.salesSummaryToolStripMenuItem,
-            this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.indexMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.indexMenuStrip.Name = "indexMenuStrip";
-            this.indexMenuStrip.Size = new System.Drawing.Size(800, 24);
+            this.indexMenuStrip.Size = new System.Drawing.Size(691, 24);
             this.indexMenuStrip.TabIndex = 0;
             // 
             // addCompanyToolStripMenuItem
@@ -107,11 +107,11 @@
             this.salesSummaryToolStripMenuItem.Text = "Sales Summary";
             this.salesSummaryToolStripMenuItem.Click += new System.EventHandler(this.salesSummaryToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
+            // homeToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
             // 
             // exitToolStripMenuItem
             // 
@@ -124,11 +124,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(691, 394);
             this.Controls.Add(this.indexMenuStrip);
             this.MainMenuStrip = this.indexMenuStrip;
             this.Name = "Index";
             this.Text = "Stock Management System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Index_FormClosing);
             this.indexMenuStrip.ResumeLayout(false);
             this.indexMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -146,7 +147,7 @@
         private System.Windows.Forms.ToolStripMenuItem stockOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }

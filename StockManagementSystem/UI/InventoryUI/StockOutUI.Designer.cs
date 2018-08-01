@@ -47,19 +47,29 @@
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.stockOutDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransactionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indexMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).BeginInit();
+            this.indexMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // LostButton
             // 
-            this.LostButton.Location = new System.Drawing.Point(407, 517);
+            this.LostButton.Location = new System.Drawing.Point(381, 523);
             this.LostButton.Name = "LostButton";
             this.LostButton.Size = new System.Drawing.Size(75, 23);
             this.LostButton.TabIndex = 55;
@@ -69,7 +79,7 @@
             // 
             // DamageButton
             // 
-            this.DamageButton.Location = new System.Drawing.Point(326, 517);
+            this.DamageButton.Location = new System.Drawing.Point(300, 523);
             this.DamageButton.Name = "DamageButton";
             this.DamageButton.Size = new System.Drawing.Size(75, 23);
             this.DamageButton.TabIndex = 54;
@@ -79,7 +89,7 @@
             // 
             // SellButton
             // 
-            this.SellButton.Location = new System.Drawing.Point(245, 517);
+            this.SellButton.Location = new System.Drawing.Point(219, 523);
             this.SellButton.Name = "SellButton";
             this.SellButton.Size = new System.Drawing.Size(75, 23);
             this.SellButton.TabIndex = 53;
@@ -89,7 +99,7 @@
             // 
             // stockOutTextBox
             // 
-            this.stockOutTextBox.Location = new System.Drawing.Point(314, 194);
+            this.stockOutTextBox.Location = new System.Drawing.Point(288, 200);
             this.stockOutTextBox.Name = "stockOutTextBox";
             this.stockOutTextBox.Size = new System.Drawing.Size(211, 20);
             this.stockOutTextBox.TabIndex = 51;
@@ -97,7 +107,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 197);
+            this.label6.Location = new System.Drawing.Point(156, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 50;
@@ -106,7 +116,7 @@
             // availableQuantityLabel
             // 
             this.availableQuantityLabel.AutoSize = true;
-            this.availableQuantityLabel.Location = new System.Drawing.Point(314, 166);
+            this.availableQuantityLabel.Location = new System.Drawing.Point(288, 172);
             this.availableQuantityLabel.Name = "availableQuantityLabel";
             this.availableQuantityLabel.Size = new System.Drawing.Size(0, 13);
             this.availableQuantityLabel.TabIndex = 49;
@@ -114,7 +124,7 @@
             // itemNameComboBox
             // 
             this.itemNameComboBox.FormattingEnabled = true;
-            this.itemNameComboBox.Location = new System.Drawing.Point(314, 100);
+            this.itemNameComboBox.Location = new System.Drawing.Point(288, 106);
             this.itemNameComboBox.Name = "itemNameComboBox";
             this.itemNameComboBox.Size = new System.Drawing.Size(211, 21);
             this.itemNameComboBox.TabIndex = 48;
@@ -123,7 +133,7 @@
             // reOrderLevelLabel
             // 
             this.reOrderLevelLabel.AutoSize = true;
-            this.reOrderLevelLabel.Location = new System.Drawing.Point(315, 134);
+            this.reOrderLevelLabel.Location = new System.Drawing.Point(289, 140);
             this.reOrderLevelLabel.Name = "reOrderLevelLabel";
             this.reOrderLevelLabel.Size = new System.Drawing.Size(0, 13);
             this.reOrderLevelLabel.TabIndex = 47;
@@ -131,7 +141,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(203, 134);
+            this.label5.Location = new System.Drawing.Point(177, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 46;
@@ -139,7 +149,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(450, 229);
+            this.AddButton.Location = new System.Drawing.Point(424, 235);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 45;
@@ -150,7 +160,7 @@
             // companyComboBox
             // 
             this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(314, 67);
+            this.companyComboBox.Location = new System.Drawing.Point(288, 73);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(211, 21);
             this.companyComboBox.TabIndex = 44;
@@ -159,7 +169,7 @@
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(314, 36);
+            this.categoryComboBox.Location = new System.Drawing.Point(288, 42);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(211, 21);
             this.categoryComboBox.TabIndex = 43;
@@ -168,7 +178,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(190, 166);
+            this.label4.Location = new System.Drawing.Point(164, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 42;
@@ -177,7 +187,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(224, 102);
+            this.label3.Location = new System.Drawing.Point(198, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 41;
@@ -186,7 +196,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 70);
+            this.label2.Location = new System.Drawing.Point(205, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 40;
@@ -195,7 +205,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(233, 39);
+            this.label1.Location = new System.Drawing.Point(207, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 39;
@@ -211,18 +221,23 @@
             this.stockOutDataGridView.AllowUserToDeleteRows = false;
             this.stockOutDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stockOutDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.ItemName,
             this.StockTransaction,
             this.StockAvailable,
-            this.CompanyName,
-            this.CategoryName,
-            this.TransactionDate});
-            this.stockOutDataGridView.Location = new System.Drawing.Point(34, 268);
+            this.CompanyName});
+            this.stockOutDataGridView.Location = new System.Drawing.Point(70, 276);
             this.stockOutDataGridView.MultiSelect = false;
             this.stockOutDataGridView.Name = "stockOutDataGridView";
             this.stockOutDataGridView.ReadOnly = true;
-            this.stockOutDataGridView.Size = new System.Drawing.Size(644, 232);
+            this.stockOutDataGridView.Size = new System.Drawing.Size(544, 232);
             this.stockOutDataGridView.TabIndex = 56;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "SL";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // ItemName
             // 
@@ -248,23 +263,92 @@
             this.CompanyName.Name = "CompanyName";
             this.CompanyName.ReadOnly = true;
             // 
-            // CategoryName
+            // indexMenuStrip
             // 
-            this.CategoryName.HeaderText = "Category";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
+            this.indexMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.addCompanyToolStripMenuItem,
+            this.addCategoryToolStripMenuItem,
+            this.addItemToolStripMenuItem,
+            this.stockInToolStripMenuItem,
+            this.stockOutToolStripMenuItem,
+            this.itemSummaryToolStripMenuItem,
+            this.salesSummaryToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.indexMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.indexMenuStrip.Name = "indexMenuStrip";
+            this.indexMenuStrip.Size = new System.Drawing.Size(686, 24);
+            this.indexMenuStrip.TabIndex = 57;
             // 
-            // TransactionDate
+            // homeToolStripMenuItem
             // 
-            this.TransactionDate.HeaderText = "Date";
-            this.TransactionDate.Name = "TransactionDate";
-            this.TransactionDate.ReadOnly = true;
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            // 
+            // addCompanyToolStripMenuItem
+            // 
+            this.addCompanyToolStripMenuItem.Name = "addCompanyToolStripMenuItem";
+            this.addCompanyToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.addCompanyToolStripMenuItem.Text = "Add Company";
+            this.addCompanyToolStripMenuItem.Click += new System.EventHandler(this.addCompanyToolStripMenuItem_Click);
+            // 
+            // addCategoryToolStripMenuItem
+            // 
+            this.addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
+            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.addCategoryToolStripMenuItem.Text = "Add Category";
+            this.addCategoryToolStripMenuItem.Click += new System.EventHandler(this.addCategoryToolStripMenuItem_Click);
+            // 
+            // addItemToolStripMenuItem
+            // 
+            this.addItemToolStripMenuItem.Name = "addItemToolStripMenuItem";
+            this.addItemToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.addItemToolStripMenuItem.Text = "Add Item";
+            this.addItemToolStripMenuItem.Click += new System.EventHandler(this.addItemToolStripMenuItem_Click);
+            // 
+            // stockInToolStripMenuItem
+            // 
+            this.stockInToolStripMenuItem.Name = "stockInToolStripMenuItem";
+            this.stockInToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.stockInToolStripMenuItem.Text = "Stock In";
+            this.stockInToolStripMenuItem.Click += new System.EventHandler(this.stockInToolStripMenuItem_Click);
+            // 
+            // stockOutToolStripMenuItem
+            // 
+            this.stockOutToolStripMenuItem.Name = "stockOutToolStripMenuItem";
+            this.stockOutToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.stockOutToolStripMenuItem.Text = "Stock Out";
+            this.stockOutToolStripMenuItem.Click += new System.EventHandler(this.stockOutToolStripMenuItem_Click);
+            // 
+            // itemSummaryToolStripMenuItem
+            // 
+            this.itemSummaryToolStripMenuItem.Name = "itemSummaryToolStripMenuItem";
+            this.itemSummaryToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.itemSummaryToolStripMenuItem.Text = "Item Summary";
+            this.itemSummaryToolStripMenuItem.Click += new System.EventHandler(this.itemSummaryToolStripMenuItem_Click);
+            // 
+            // salesSummaryToolStripMenuItem
+            // 
+            this.salesSummaryToolStripMenuItem.Name = "salesSummaryToolStripMenuItem";
+            this.salesSummaryToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.salesSummaryToolStripMenuItem.Text = "Sales Summary";
+            this.salesSummaryToolStripMenuItem.Click += new System.EventHandler(this.salesSummaryToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // StockOutUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 566);
+            this.ClientSize = new System.Drawing.Size(686, 561);
+            this.Controls.Add(this.indexMenuStrip);
             this.Controls.Add(this.stockOutDataGridView);
             this.Controls.Add(this.LostButton);
             this.Controls.Add(this.DamageButton);
@@ -283,9 +367,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "StockOutUI";
-            this.Text = "StockOutUI";
+            this.Text = "Stock Out";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StockOutUI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).EndInit();
+            this.indexMenuStrip.ResumeLayout(false);
+            this.indexMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,11 +398,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.DataGridView stockOutDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockTransaction;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockAvailable;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TransactionDate;
+        private System.Windows.Forms.MenuStrip indexMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem addCompanyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCategoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemSummaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
