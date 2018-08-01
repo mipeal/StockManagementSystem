@@ -11,57 +11,11 @@ namespace StockManagementSystem.DAL
 {
     class ItemRepository
     {
-        private static string _connectionString = @"server=PC-301-04\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
+        private static string _connectionString = @"server=DESKTOP-S6EBN26\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
 
         SqlConnection _connection = new SqlConnection(_connectionString);
 
-        public List<Category> GetCategories(List<Category> categories)
-        {
-            string query = @"SELECT * FROM Categories";
-
-            SqlCommand command = new SqlCommand(query, _connection);
-
-            _connection.Open();
-
-            SqlDataReader dataReader = command.ExecuteReader();
-
-            
-            while (dataReader.Read())
-            {
-                Category category = new Category();
-                category.Id = Convert.ToInt32(dataReader["Id"]);
-                category.Name = dataReader["Name"].ToString();
-                categories.Add(category);
-            }
-
-            _connection.Close();
-
-            return categories;
-        }
-
-        public List<Company> GetCompanies(List<Company> companies)
-        {
-            string query = @"SELECT * FROM Companies";
-
-            SqlCommand command = new SqlCommand(query, _connection);
-
-            _connection.Open();
-
-            SqlDataReader dataReader = command.ExecuteReader();
-
-
-            while (dataReader.Read())
-            {
-                Company company =new Company();
-                company.Id = Convert.ToInt32(dataReader["Id"]);
-                company.Name = dataReader["Name"].ToString();
-                companies.Add(company);
-            }
-
-            _connection.Close();
-
-            return companies;
-        }
+   
 
         public bool Add(Item item)
         {
@@ -81,6 +35,83 @@ namespace StockManagementSystem.DAL
                 return true;
             }
             return false;
+        }
+
+        public DataTable GetItems(int categoryId, int companyID)
+        {
+            string query = @"SELECT * FROM Items WHERE CategoryId ='"+categoryId+"' and CompanyId ='"+companyID+"'";
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            _connection.Close();
+
+            DataTable dataTable = new DataTable();
+
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
+
+
+        public DataTable GetItemsByCompany(int id)
+        {
+             string query = @"SELECT * FROM Items WHERE CompanyId ='" + id + "'";            
+                          
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            _connection.Close();
+
+            DataTable dataTable = new DataTable();
+
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
+        public DataTable GetItemsByCategory(int id)
+        {
+            string query = @"SELECT * FROM Items WHERE CategoryId ='" + id + "'";
+
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            _connection.Close();
+
+            DataTable dataTable = new DataTable();
+
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
+        public DataTable GetItems()
+        {
+            string query = @"SELECT * FROM Items";
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            _connection.Close();
+
+            DataTable dataTable = new DataTable();
+
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
         }
     }
 }

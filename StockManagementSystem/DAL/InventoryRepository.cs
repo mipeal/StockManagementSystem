@@ -1,41 +1,25 @@
-﻿using System;
+﻿using StockManagementSystem.Models.InventoryModels;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StockManagementSystem.Models;
 
 namespace StockManagementSystem.DAL
 {
-    class CategoryRepository
+    class InventoryRepository
     {
         private static string _connectionString = @"server=DESKTOP-S6EBN26\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
 
         SqlConnection _connection = new SqlConnection(_connectionString);
-        public bool Add(Category category)
+
+
+        public DataSet GetItemInventory(int itemId)
         {
-            string query = @"INSERT INTO [dbo].[Categories]  ([Name]) VALUES('" + category.Name + "')";
+            string query = @"SELECT * FROM V_GetAllItemInventory WHERE ItemId ='" + itemId + "'";
 
-            SqlCommand command = new SqlCommand(query, _connection);
-
-            _connection.Open();
-
-            bool isAdded = command.ExecuteNonQuery() > 0;
-
-            _connection.Close();
-
-            if (isAdded)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public DataTable GetCategories()
-        {
-            string query = @"SELECT * FROM Categories";
 
             SqlCommand command = new SqlCommand(query, _connection);
 
@@ -45,18 +29,17 @@ namespace StockManagementSystem.DAL
 
             _connection.Close();
 
-            DataTable dataTable = new DataTable();
+            DataSet dataSet = new DataSet();
 
-            sqlDataAdapter.Fill(dataTable);
+            sqlDataAdapter.Fill(dataSet);
 
-            return dataTable;
+            return dataSet;
         }
 
-
-
-        public bool Update(Category category)
+        public bool Add(Inventory item)
         {
-            string query = @"UPDATE [dbo].[Categories] SET [Name] ='"+category.Name+"' WHERE [Id]='"+category.Id+"'";
+            string query = @"INSERT INTO [dbo].[Inventory]  ([ItemId],[StockAvailable],[StockTransaction],[StockType],[TransactionDate])
+                     VALUES ('" + item.ItemId + "','" + item.StockAvailable + "','" + item.StockTransaction + "','" + item.StockType + "','" + item.TransactionDate + "')";
 
             SqlCommand command = new SqlCommand(query, _connection);
 

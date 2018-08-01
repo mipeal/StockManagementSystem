@@ -40,5 +40,6 @@ namespace StockManagementSystem.BLL
             bool isAdded = _repository.Update(category);
             return isAdded;
         }
+
     }
 }

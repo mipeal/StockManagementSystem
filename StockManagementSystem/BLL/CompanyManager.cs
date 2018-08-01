@@ -29,5 +29,6 @@ namespace StockManagementSystem.BLL
             DataTable dataTable = _repository.GetCompanies();
             return dataTable;
         }
+
     }
 }

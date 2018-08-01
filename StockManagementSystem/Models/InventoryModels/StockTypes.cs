@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem.Models.InventoryModels
 {
-    public enum StockOutTypes
+    public enum StockTypes
     {
-        Sell=1,
-        Damage=2,
-        Lost=3
+        In=1,
+        Out=0
     }
 }

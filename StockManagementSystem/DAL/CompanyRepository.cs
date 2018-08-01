@@ -11,7 +11,7 @@ namespace StockManagementSystem.DAL
 {
     class CompanyRepository
     {
-        private static string _connectionString = @"server=PC-301-04\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
+        private static string _connectionString = @"server=DESKTOP-S6EBN26\SQLEXPRESS; database=SMS_BITM; integrated security=true;";
 
 
         SqlConnection _connection = new SqlConnection(_connectionString);
@@ -33,6 +33,7 @@ namespace StockManagementSystem.DAL
             }
             return false;
         }
+
 
         public DataTable GetCompanies()
         {

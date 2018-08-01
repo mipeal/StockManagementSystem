@@ -1,4 +1,6 @@
-﻿using StockManagementSystem.UI.ItemSetup;
+﻿using StockManagementSystem.UI;
+using StockManagementSystem.UI.InventoryUI;
+using StockManagementSystem.UI.ItemSetup;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,7 @@ namespace StockManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CategorySetupUI());
+            Application.Run(new Index());
         }
     }
 }

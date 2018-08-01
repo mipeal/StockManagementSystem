@@ -14,12 +14,15 @@ namespace StockManagementSystem.UI.ItemSetup
 {
     public partial class ItemSetupUI : Form
     {
-        ItemManager _manager = new ItemManager();
+        ItemManager _itemManager = new ItemManager();
+        CompanyManager _companyManager = new CompanyManager();
+        CategoryManager _categoryManager = new CategoryManager();
+
         public ItemSetupUI()
         {
             InitializeComponent();
-            PopulateCompanies(new List<Company>());
-            PopulateCategories(new List<Category>());
+            PopulateCompanies();
+            PopulateCategories();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace StockManagementSystem.UI.ItemSetup
                 item.Name = itemNameTextBox.Text;
                 item.ReOrderLevel = Convert.ToInt32(reOrderLevelTextBox.Text);
 
-                bool isAdded = _manager.Add(item);
+                bool isAdded = _itemManager.Add(item);
                 if (isAdded)
                 {
                     Reset(this.Controls);
@@ -61,23 +64,24 @@ namespace StockManagementSystem.UI.ItemSetup
             }
         }
 
-        private void PopulateCategories(List<Category> categories )
+
+        private void PopulateCategories()
         {
-            categoryComboBox.Items.Clear();
-            List<Category> categoriesAre = _manager.GetCategories(categories);
-            categoryComboBox.DataSource = categoriesAre;
-            categoryComboBox.DisplayMember = "Name";
+            DataTable dt = new DataTable();
+            dt = _categoryManager.GetCategories();
             categoryComboBox.ValueMember = "Id";
+            categoryComboBox.DisplayMember = "Name";
+            categoryComboBox.DataSource = dt;
 
         }
 
-        private void PopulateCompanies(List<Company> companies)
+        private void PopulateCompanies()
         {
-            companyComboBox.Items.Clear();
-            List<Company> companiesAre = _manager.GetCompanies(companies);
-            companyComboBox.DataSource = companiesAre;
-            companyComboBox.DisplayMember = "Name";
+            DataTable dt = new DataTable();
+            dt = _companyManager.GetCompanies();
             companyComboBox.ValueMember = "Id";
+            companyComboBox.DisplayMember = "Name";
+            companyComboBox.DataSource = dt;
         }
     }
 }
