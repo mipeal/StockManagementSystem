@@ -43,6 +43,7 @@ namespace StockManagementSystem.UI.InventoryUI
                 if (isAdded > 0)
                 {
                     MessageBox.Show(isAdded + " Transaction for Stock-Out Added!");
+                    _stockOutList.Clear();
                     stockOutDataGridView.Rows.Clear();
                     Reset(this.Controls);
                 }
@@ -68,6 +69,7 @@ namespace StockManagementSystem.UI.InventoryUI
                 if (isAdded > 0)
                 {
                     MessageBox.Show(isAdded + " Transaction for Stock-Out Added!");
+                    _stockOutList.Clear();
                     stockOutDataGridView.Rows.Clear();
                     Reset(this.Controls);
                 }
@@ -93,6 +95,7 @@ namespace StockManagementSystem.UI.InventoryUI
                 if (isAdded > 0)
                 {
                     MessageBox.Show(isAdded + " Transaction for Stock-Out Added!");
+                    _stockOutList.Clear();
                     stockOutDataGridView.Rows.Clear();
                     Reset(this.Controls);
                 }
@@ -112,6 +115,8 @@ namespace StockManagementSystem.UI.InventoryUI
             try
             {
                 Inventory stockOut = new Inventory();
+
+                MessageBox.Show(stockOut.TransactionDate.ToLongDateString());
                 stockOut.ItemId = Convert.ToInt32(itemNameComboBox.SelectedValue.ToString());
                 if (stockOut.ItemId <= 0)
                 {
@@ -252,7 +257,7 @@ namespace StockManagementSystem.UI.InventoryUI
         private void PopulateItemInfo(int itemId)
         {
             DataSet ds = new DataSet();
-            ds = _inventoryManager.GetItemInventory(itemId);
+            ds = _inventoryManager.GetStockBalance(itemId);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 availableQuantityLabel.Text = Convert.ToString(ds.Tables[0].Rows[0].Field<int>("StockAvailable"));

@@ -14,7 +14,7 @@ namespace StockManagementSystem.Models.InventoryModels
         public int StockTransaction { get; set; }
         public int StockType { get; set; }
         public int StockOutType { get; set; }
-        public string TransactionDate { get => DateTime.Now.ToShortDateString(); }
+        public DateTime TransactionDate { get => DateTime.Now; }
 
 
     }

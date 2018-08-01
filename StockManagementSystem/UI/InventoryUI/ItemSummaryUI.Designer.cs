@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemSummaryDataGridView = new System.Windows.Forms.DataGridView();
             this.SearchButton = new System.Windows.Forms.Button();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // itemSummaryDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(105, 136);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(590, 276);
-            this.dataGridView1.TabIndex = 34;
+            this.itemSummaryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemSummaryDataGridView.Location = new System.Drawing.Point(90, 136);
+            this.itemSummaryDataGridView.Name = "itemSummaryDataGridView";
+            this.itemSummaryDataGridView.Size = new System.Drawing.Size(645, 276);
+            this.itemSummaryDataGridView.TabIndex = 34;
             // 
             // SearchButton
             // 
@@ -53,6 +53,7 @@
             this.SearchButton.TabIndex = 33;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // companyComboBox
             // 
@@ -61,6 +62,7 @@
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(211, 21);
             this.companyComboBox.TabIndex = 38;
+            this.companyComboBox.Click += new System.EventHandler(this.companyComboBox_Click);
             // 
             // categoryComboBox
             // 
@@ -69,6 +71,7 @@
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(211, 21);
             this.categoryComboBox.TabIndex = 37;
+            this.categoryComboBox.Click += new System.EventHandler(this.categoryComboBox_Click);
             // 
             // label2
             // 
@@ -97,18 +100,18 @@
             this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.itemSummaryDataGridView);
             this.Controls.Add(this.SearchButton);
             this.Name = "ItemSummaryUI";
             this.Text = "Item Summary View";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView itemSummaryDataGridView;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.ComboBox companyComboBox;
         private System.Windows.Forms.ComboBox categoryComboBox;

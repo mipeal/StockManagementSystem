@@ -1,4 +1,5 @@
 ﻿using StockManagementSystem.DAL;
+using StockManagementSystem.Models;
 using StockManagementSystem.Models.InventoryModels;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,39 @@ namespace StockManagementSystem.BLL
                 }
             }
             return rowOccurred;
+        }
+
+        public DataSet GetStockBalance(int itemId)
+        {
+            DataSet items = new DataSet();
+            if (itemId > 0)
+            {
+                items = _repository.GetStockBalance(itemId);
+            }
+            return items;
+        }
+
+        public DataTable SearchItemsSummary(int categoryId,int companyId)
+        {
+            if ( categoryId <=0 && companyId <=0)
+            {
+                throw new Exception("Sorry.. Please Select Category or Company!!!");
+            }
+
+            DataTable dt = new DataTable();
+            if (categoryId <= 0)
+            {
+                dt = _repository.SearchItemsSummaryByCompanyId(companyId);
+            }
+            else if (companyId<=0)
+            {
+                dt = _repository.SearchItemsSummaryByCategoryId(categoryId);
+            }
+            else
+            {
+                dt = _repository.SearchItemsSummary(categoryId, companyId);
+            }
+            return dt;
         }
     }
 }
