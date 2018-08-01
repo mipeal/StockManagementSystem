@@ -34,6 +34,17 @@ namespace StockManagementSystem.BLL
             return isAdded;
         }
 
+        public DataTable ViewSaleSummary(string fromDate, string toDate)
+        {
+            if (fromDate == String.Empty || toDate==String.Empty)
+            {
+                throw new Exception("Sorry!");
+            }
+            DataTable dt = new DataTable();
+                dt = _repository.ViewSaleSummary(fromDate,toDate);
+            return dt;
+        }
+
         public int Add(List<Inventory> stockOutList)
         {
             int rowOccurred = 0;

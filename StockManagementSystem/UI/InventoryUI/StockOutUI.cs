@@ -115,8 +115,6 @@ namespace StockManagementSystem.UI.InventoryUI
             try
             {
                 Inventory stockOut = new Inventory();
-
-                MessageBox.Show(stockOut.TransactionDate.ToLongDateString());
                 stockOut.ItemId = Convert.ToInt32(itemNameComboBox.SelectedValue.ToString());
                 if (stockOut.ItemId <= 0)
                 {

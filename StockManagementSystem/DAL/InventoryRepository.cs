@@ -57,9 +57,30 @@ namespace StockManagementSystem.DAL
             return false;
         }
 
+        public DataTable ViewSaleSummary(string fromDate, string toDate)
+        {
+            string query = @"  SELECT ItemName AS Name,  SUM(StockTransaction) AS [Sale Quantity]  FROM V_GetAllItemInventory  WHERE StockOutType = 1 AND TransactionDate BETWEEN '" + fromDate + "' AND '" + toDate + "'  GROUP BY ItemName";
+
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            _connection.Close();
+
+
+            DataTable dataTable = new DataTable();
+
+            sqlDataAdapter.Fill(dataTable);
+
+            return dataTable;
+        }
+
         public DataSet GetStockBalance(int itemId)
         {
-            string query = @"SELECT top 1 StockAvailable FROM Inventory WHERE ItemId ='" + itemId + "'ORDER BY TransactionDate DESC";
+            string query = @"SELECT top 1 StockAvailable FROM Inventory WHERE ItemId ='" + itemId + "' ORDER BY TransactionDate DESC";
 
 
             SqlCommand command = new SqlCommand(query, _connection);
