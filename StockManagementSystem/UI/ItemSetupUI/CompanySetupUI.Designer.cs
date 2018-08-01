@@ -46,6 +46,7 @@
             this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.indexMenuStrip.SuspendLayout();
@@ -59,7 +60,7 @@
             this.companyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.CompanyName});
-            this.companyDataGridView.Location = new System.Drawing.Point(54, 108);
+            this.companyDataGridView.Location = new System.Drawing.Point(176, 183);
             this.companyDataGridView.Name = "companyDataGridView";
             this.companyDataGridView.ReadOnly = true;
             this.companyDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -80,7 +81,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(305, 63);
+            this.SaveButton.Location = new System.Drawing.Point(427, 138);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 10;
@@ -90,7 +91,7 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(109, 37);
+            this.nameTextBox.Location = new System.Drawing.Point(231, 112);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(271, 20);
             this.nameTextBox.TabIndex = 9;
@@ -98,7 +99,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 40);
+            this.label1.Location = new System.Drawing.Point(173, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 8;
@@ -188,18 +189,30 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Ananda Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(221, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(263, 45);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Add  New Company";
+            // 
             // CompanySetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 378);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.indexMenuStrip);
             this.Controls.Add(this.companyDataGridView);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "CompanySetupUI";
-            this.Text = "Company Setup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock Management System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompanySetupUI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
@@ -229,5 +242,6 @@
         private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.indexMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +52,8 @@
             this.stockOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.indexMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             // itemNameComboBox
             // 
             this.itemNameComboBox.FormattingEnabled = true;
-            this.itemNameComboBox.Location = new System.Drawing.Point(270, 170);
+            this.itemNameComboBox.Location = new System.Drawing.Point(274, 205);
             this.itemNameComboBox.Name = "itemNameComboBox";
             this.itemNameComboBox.Size = new System.Drawing.Size(211, 21);
             this.itemNameComboBox.TabIndex = 31;
@@ -68,7 +69,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(406, 296);
+            this.SaveButton.Location = new System.Drawing.Point(410, 331);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 28;
@@ -79,7 +80,7 @@
             // companyComboBox
             // 
             this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(270, 137);
+            this.companyComboBox.Location = new System.Drawing.Point(274, 172);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(211, 21);
             this.companyComboBox.TabIndex = 27;
@@ -88,7 +89,7 @@
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(270, 106);
+            this.categoryComboBox.Location = new System.Drawing.Point(274, 141);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(211, 21);
             this.categoryComboBox.TabIndex = 26;
@@ -98,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(180, 172);
+            this.label3.Location = new System.Drawing.Point(184, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 24;
@@ -107,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 140);
+            this.label2.Location = new System.Drawing.Point(191, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 23;
@@ -116,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(189, 109);
+            this.label1.Location = new System.Drawing.Point(193, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 22;
@@ -124,7 +125,7 @@
             // 
             // stockInTextBox
             // 
-            this.stockInTextBox.Location = new System.Drawing.Point(270, 265);
+            this.stockInTextBox.Location = new System.Drawing.Point(274, 300);
             this.stockInTextBox.Name = "stockInTextBox";
             this.stockInTextBox.Size = new System.Drawing.Size(211, 20);
             this.stockInTextBox.TabIndex = 57;
@@ -132,7 +133,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(138, 268);
+            this.label6.Location = new System.Drawing.Point(142, 303);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 13);
             this.label6.TabIndex = 56;
@@ -141,7 +142,7 @@
             // availableQuantityLabel
             // 
             this.availableQuantityLabel.AutoSize = true;
-            this.availableQuantityLabel.Location = new System.Drawing.Point(270, 237);
+            this.availableQuantityLabel.Location = new System.Drawing.Point(274, 272);
             this.availableQuantityLabel.Name = "availableQuantityLabel";
             this.availableQuantityLabel.Size = new System.Drawing.Size(0, 13);
             this.availableQuantityLabel.TabIndex = 55;
@@ -149,7 +150,7 @@
             // reOrderLevelLabel
             // 
             this.reOrderLevelLabel.AutoSize = true;
-            this.reOrderLevelLabel.Location = new System.Drawing.Point(271, 205);
+            this.reOrderLevelLabel.Location = new System.Drawing.Point(275, 240);
             this.reOrderLevelLabel.Name = "reOrderLevelLabel";
             this.reOrderLevelLabel.Size = new System.Drawing.Size(0, 13);
             this.reOrderLevelLabel.TabIndex = 54;
@@ -157,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(159, 205);
+            this.label5.Location = new System.Drawing.Point(163, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 53;
@@ -166,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(146, 237);
+            this.label4.Location = new System.Drawing.Point(150, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 52;
@@ -192,6 +193,13 @@
             this.indexMenuStrip.Name = "indexMenuStrip";
             this.indexMenuStrip.Size = new System.Drawing.Size(690, 24);
             this.indexMenuStrip.TabIndex = 58;
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // addCompanyToolStripMenuItem
             // 
@@ -242,13 +250,6 @@
             this.salesSummaryToolStripMenuItem.Text = "Sales Summary";
             this.salesSummaryToolStripMenuItem.Click += new System.EventHandler(this.salesSummaryToolStripMenuItem_Click);
             // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -256,11 +257,22 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Ananda Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(251, 53);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(206, 45);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Stock  In  Items";
+            // 
             // StockInUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 456);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.indexMenuStrip);
             this.Controls.Add(this.stockInTextBox);
             this.Controls.Add(this.label6);
@@ -276,7 +288,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "StockInUI";
-            this.Text = "Stock In";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock Management System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StockInUI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.indexMenuStrip.ResumeLayout(false);
@@ -311,5 +324,6 @@
         private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -39,6 +39,7 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.gridMessage = new System.Windows.Forms.Label();
             this.indexMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +47,8 @@
             this.stockOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.indexMenuStrip.SuspendLayout();
@@ -61,7 +62,7 @@
             this.categoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.CategoryName});
-            this.categoryDataGridView.Location = new System.Drawing.Point(56, 101);
+            this.categoryDataGridView.Location = new System.Drawing.Point(175, 225);
             this.categoryDataGridView.MultiSelect = false;
             this.categoryDataGridView.Name = "categoryDataGridView";
             this.categoryDataGridView.ReadOnly = true;
@@ -85,7 +86,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(307, 56);
+            this.SaveButton.Location = new System.Drawing.Point(426, 180);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 6;
@@ -95,7 +96,7 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(111, 30);
+            this.nameTextBox.Location = new System.Drawing.Point(230, 154);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(271, 20);
             this.nameTextBox.TabIndex = 5;
@@ -103,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 33);
+            this.label1.Location = new System.Drawing.Point(172, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
@@ -115,7 +116,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(307, 56);
+            this.UpdateButton.Location = new System.Drawing.Point(426, 180);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 23);
             this.UpdateButton.TabIndex = 8;
@@ -149,6 +150,13 @@
             this.indexMenuStrip.Name = "indexMenuStrip";
             this.indexMenuStrip.Size = new System.Drawing.Size(687, 24);
             this.indexMenuStrip.TabIndex = 10;
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // addCompanyToolStripMenuItem
             // 
@@ -199,13 +207,6 @@
             this.salesSummaryToolStripMenuItem.Text = "Sales Summary";
             this.salesSummaryToolStripMenuItem.Click += new System.EventHandler(this.salesSummaryToolStripMenuItem_Click);
             // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -213,11 +214,22 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Ananda Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(207, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(257, 45);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Add  New Category";
+            // 
             // CategorySetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 442);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.indexMenuStrip);
             this.Controls.Add(this.gridMessage);
             this.Controls.Add(this.UpdateButton);
@@ -226,6 +238,7 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "CategorySetupUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category Setup ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CategorySetupUI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
@@ -258,5 +271,6 @@
         private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
     }
 }

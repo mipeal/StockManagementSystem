@@ -49,12 +49,13 @@ namespace StockManagementSystem.UI.ItemSetup
             this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label5 = new System.Windows.Forms.Label();
             this.indexMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(390, 228);
+            this.SaveButton.Location = new System.Drawing.Point(404, 257);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 17;
@@ -65,7 +66,7 @@ namespace StockManagementSystem.UI.ItemSetup
             // companyComboBox
             // 
             this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(254, 134);
+            this.companyComboBox.Location = new System.Drawing.Point(268, 163);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(211, 21);
             this.companyComboBox.TabIndex = 16;
@@ -73,21 +74,21 @@ namespace StockManagementSystem.UI.ItemSetup
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(254, 103);
+            this.categoryComboBox.Location = new System.Drawing.Point(268, 132);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(211, 21);
             this.categoryComboBox.TabIndex = 15;
             // 
             // reOrderLevelTextBox
             // 
-            this.reOrderLevelTextBox.Location = new System.Drawing.Point(254, 197);
+            this.reOrderLevelTextBox.Location = new System.Drawing.Point(268, 226);
             this.reOrderLevelTextBox.Name = "reOrderLevelTextBox";
             this.reOrderLevelTextBox.Size = new System.Drawing.Size(211, 20);
             this.reOrderLevelTextBox.TabIndex = 14;
             // 
             // itemNameTextBox
             // 
-            this.itemNameTextBox.Location = new System.Drawing.Point(254, 166);
+            this.itemNameTextBox.Location = new System.Drawing.Point(268, 195);
             this.itemNameTextBox.Name = "itemNameTextBox";
             this.itemNameTextBox.Size = new System.Drawing.Size(211, 20);
             this.itemNameTextBox.TabIndex = 13;
@@ -95,7 +96,7 @@ namespace StockManagementSystem.UI.ItemSetup
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(143, 200);
+            this.label4.Location = new System.Drawing.Point(157, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 12;
@@ -104,7 +105,7 @@ namespace StockManagementSystem.UI.ItemSetup
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 169);
+            this.label3.Location = new System.Drawing.Point(178, 198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 11;
@@ -113,7 +114,7 @@ namespace StockManagementSystem.UI.ItemSetup
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(171, 137);
+            this.label2.Location = new System.Drawing.Point(185, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 10;
@@ -122,7 +123,7 @@ namespace StockManagementSystem.UI.ItemSetup
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 106);
+            this.label1.Location = new System.Drawing.Point(187, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 9;
@@ -207,11 +208,22 @@ namespace StockManagementSystem.UI.ItemSetup
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Ananda Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(207, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(218, 45);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Add  New  Item";
+            // 
             // ItemSetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 389);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.indexMenuStrip);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.companyComboBox);
@@ -223,7 +235,8 @@ namespace StockManagementSystem.UI.ItemSetup
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ItemSetupUI";
-            this.Text = "Item Setup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock Management System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemSetupUI_FormClosing);
             this.indexMenuStrip.ResumeLayout(false);
             this.indexMenuStrip.PerformLayout();
@@ -258,5 +271,6 @@ namespace StockManagementSystem.UI.ItemSetup
         private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
     }
 }

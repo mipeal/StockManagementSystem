@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.indexMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +46,8 @@
             this.stockOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.saleSummaryGridView)).BeginInit();
             this.indexMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             // toDatePicker
             // 
             this.toDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.toDatePicker.Location = new System.Drawing.Point(379, 44);
+            this.toDatePicker.Location = new System.Drawing.Point(380, 125);
             this.toDatePicker.Name = "toDatePicker";
             this.toDatePicker.Size = new System.Drawing.Size(183, 20);
             this.toDatePicker.TabIndex = 36;
@@ -64,7 +65,7 @@
             // 
             this.fromDatePicker.CustomFormat = "";
             this.fromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fromDatePicker.Location = new System.Drawing.Point(149, 44);
+            this.fromDatePicker.Location = new System.Drawing.Point(150, 125);
             this.fromDatePicker.Name = "fromDatePicker";
             this.fromDatePicker.Size = new System.Drawing.Size(183, 20);
             this.fromDatePicker.TabIndex = 35;
@@ -79,11 +80,11 @@
             this.serialNo,
             this.itemName,
             this.saleQuantity});
-            this.saleSummaryGridView.Location = new System.Drawing.Point(182, 130);
+            this.saleSummaryGridView.Location = new System.Drawing.Point(173, 208);
             this.saleSummaryGridView.MultiSelect = false;
             this.saleSummaryGridView.Name = "saleSummaryGridView";
             this.saleSummaryGridView.ReadOnly = true;
-            this.saleSummaryGridView.Size = new System.Drawing.Size(346, 276);
+            this.saleSummaryGridView.Size = new System.Drawing.Size(346, 188);
             this.saleSummaryGridView.TabIndex = 34;
             // 
             // serialNo
@@ -106,7 +107,7 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(320, 82);
+            this.SearchButton.Location = new System.Drawing.Point(321, 163);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 33;
@@ -117,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 50);
+            this.label2.Location = new System.Drawing.Point(114, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 32;
@@ -126,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(353, 44);
+            this.label1.Location = new System.Drawing.Point(354, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 31;
@@ -148,6 +149,13 @@
             this.indexMenuStrip.Name = "indexMenuStrip";
             this.indexMenuStrip.Size = new System.Drawing.Size(687, 24);
             this.indexMenuStrip.TabIndex = 37;
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // addCompanyToolStripMenuItem
             // 
@@ -198,13 +206,6 @@
             this.salesSummaryToolStripMenuItem.Text = "Sales Summary";
             this.salesSummaryToolStripMenuItem.Click += new System.EventHandler(this.salesSummaryToolStripMenuItem_Click);
             // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -212,11 +213,22 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Ananda Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(246, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(213, 45);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Sales  Summary";
+            // 
             // ViewSalesByDates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 418);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.indexMenuStrip);
             this.Controls.Add(this.toDatePicker);
             this.Controls.Add(this.fromDatePicker);
@@ -225,7 +237,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ViewSalesByDates";
-            this.Text = "View Sales Between Two Dates";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock Management System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewSalesByDates_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.saleSummaryGridView)).EndInit();
             this.indexMenuStrip.ResumeLayout(false);
@@ -256,5 +269,6 @@
         private System.Windows.Forms.ToolStripMenuItem salesSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
     }
 }
