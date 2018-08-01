@@ -29,8 +29,27 @@ namespace StockManagementSystem.BLL
                 throw new Exception("Sorry, Invalid Transaction Occurred!");
             }
 
-            bool isAdded = _repository.Add(stockIn);
+            bool isAdded = _repository.AddStockIn(stockIn);
             return isAdded;
+        }
+
+        public int Add(List<Inventory> stockOutList)
+        {
+            int rowOccurred = 0;
+            if (stockOutList == null )
+            {
+                throw new Exception("Sorry, No Item Found!");
+            }
+            foreach (var item in stockOutList)
+            {
+
+                bool isInserted = _repository.AddStockOut(item);
+                if (isInserted)
+                {
+                    rowOccurred++;
+                }
+            }
+            return rowOccurred;
         }
     }
 }

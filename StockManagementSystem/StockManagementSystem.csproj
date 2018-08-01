@@ -55,6 +55,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\InventoryModels\Inventory.cs" />
+    <Compile Include="Models\InventoryModels\Partial\Inventory.cs" />
     <Compile Include="Models\InventoryModels\StockOutTypes.cs" />
     <Compile Include="Models\InventoryModels\StockTypes.cs" />
     <Compile Include="Models\Item.cs" />

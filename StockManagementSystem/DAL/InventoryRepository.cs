@@ -36,10 +36,31 @@ namespace StockManagementSystem.DAL
             return dataSet;
         }
 
-        public bool Add(Inventory item)
+        public bool AddStockIn(Inventory item)
         {
             string query = @"INSERT INTO [dbo].[Inventory]  ([ItemId],[StockAvailable],[StockTransaction],[StockType],[TransactionDate])
                      VALUES ('" + item.ItemId + "','" + item.StockAvailable + "','" + item.StockTransaction + "','" + item.StockType + "','" + item.TransactionDate + "')";
+
+            SqlCommand command = new SqlCommand(query, _connection);
+
+            _connection.Open();
+
+            bool isAdded = command.ExecuteNonQuery() > 0;
+
+            _connection.Close();
+
+            if (isAdded)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool AddStockOut(Inventory item)
+        {
+
+            string query = @"INSERT INTO [dbo].[Inventory]  ([ItemId],[StockAvailable],[StockTransaction],[StockType],[StockOutType],[TransactionDate])
+                     VALUES ('" + item.ItemId + "','" + item.StockAvailable + "','" + item.StockTransaction + "','" + item.StockType + "','" + item.StockOutType + "','" + item.TransactionDate + "')";
 
             SqlCommand command = new SqlCommand(query, _connection);
 

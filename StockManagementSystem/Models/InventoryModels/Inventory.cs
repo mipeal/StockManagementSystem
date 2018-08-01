@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManagementSystem.Models.InventoryModels
 {
-    class Inventory
+    partial class Inventory
     {
         public int Id { get; set; }
         public int ItemId { get; set; }
@@ -14,7 +14,8 @@ namespace StockManagementSystem.Models.InventoryModels
         public int StockTransaction { get; set; }
         public int StockType { get; set; }
         public int StockOutType { get; set; }
-        public DateTime TransactionDate { get => DateTime.Now; }
+        public string TransactionDate { get => DateTime.Now.ToShortDateString(); }
+
 
     }
 }

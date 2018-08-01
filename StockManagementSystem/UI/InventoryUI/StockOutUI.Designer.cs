@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LostButton = new System.Windows.Forms.Button();
             this.DamageButton = new System.Windows.Forms.Button();
             this.SellButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stockOutTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.stockInQuantityLabel = new System.Windows.Forms.Label();
-            this.itemNameComboBox = new System.Windows.Forms.ComboBox();
             this.availableQuantityLabel = new System.Windows.Forms.Label();
+            this.itemNameComboBox = new System.Windows.Forms.ComboBox();
+            this.reOrderLevelLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
@@ -45,30 +45,41 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.stockOutDataGridView = new System.Windows.Forms.DataGridView();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransactionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // LostButton
             // 
-            this.LostButton.Location = new System.Drawing.Point(476, 517);
+            this.LostButton.Location = new System.Drawing.Point(407, 517);
             this.LostButton.Name = "LostButton";
             this.LostButton.Size = new System.Drawing.Size(75, 23);
             this.LostButton.TabIndex = 55;
             this.LostButton.Text = "Lost";
             this.LostButton.UseVisualStyleBackColor = true;
+            this.LostButton.Click += new System.EventHandler(this.LostButton_Click);
             // 
             // DamageButton
             // 
-            this.DamageButton.Location = new System.Drawing.Point(395, 517);
+            this.DamageButton.Location = new System.Drawing.Point(326, 517);
             this.DamageButton.Name = "DamageButton";
             this.DamageButton.Size = new System.Drawing.Size(75, 23);
             this.DamageButton.TabIndex = 54;
             this.DamageButton.Text = "Damage";
             this.DamageButton.UseVisualStyleBackColor = true;
+            this.DamageButton.Click += new System.EventHandler(this.DamageButton_Click);
             // 
             // SellButton
             // 
-            this.SellButton.Location = new System.Drawing.Point(314, 517);
+            this.SellButton.Location = new System.Drawing.Point(245, 517);
             this.SellButton.Name = "SellButton";
             this.SellButton.Size = new System.Drawing.Size(75, 23);
             this.SellButton.TabIndex = 53;
@@ -76,20 +87,9 @@
             this.SellButton.UseVisualStyleBackColor = true;
             this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(50, 305);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(501, 206);
-            this.dataGridView1.TabIndex = 52;
-            // 
             // stockOutTextBox
             // 
-            this.stockOutTextBox.Location = new System.Drawing.Point(248, 193);
+            this.stockOutTextBox.Location = new System.Drawing.Point(314, 194);
             this.stockOutTextBox.Name = "stockOutTextBox";
             this.stockOutTextBox.Size = new System.Drawing.Size(211, 20);
             this.stockOutTextBox.TabIndex = 51;
@@ -97,40 +97,41 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(116, 196);
+            this.label6.Location = new System.Drawing.Point(182, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 50;
             this.label6.Text = "Stock- Out Quantity";
             // 
-            // stockInQuantityLabel
+            // availableQuantityLabel
             // 
-            this.stockInQuantityLabel.AutoSize = true;
-            this.stockInQuantityLabel.Location = new System.Drawing.Point(248, 165);
-            this.stockInQuantityLabel.Name = "stockInQuantityLabel";
-            this.stockInQuantityLabel.Size = new System.Drawing.Size(0, 13);
-            this.stockInQuantityLabel.TabIndex = 49;
+            this.availableQuantityLabel.AutoSize = true;
+            this.availableQuantityLabel.Location = new System.Drawing.Point(314, 166);
+            this.availableQuantityLabel.Name = "availableQuantityLabel";
+            this.availableQuantityLabel.Size = new System.Drawing.Size(0, 13);
+            this.availableQuantityLabel.TabIndex = 49;
             // 
             // itemNameComboBox
             // 
             this.itemNameComboBox.FormattingEnabled = true;
-            this.itemNameComboBox.Location = new System.Drawing.Point(248, 99);
+            this.itemNameComboBox.Location = new System.Drawing.Point(314, 100);
             this.itemNameComboBox.Name = "itemNameComboBox";
             this.itemNameComboBox.Size = new System.Drawing.Size(211, 21);
             this.itemNameComboBox.TabIndex = 48;
+            this.itemNameComboBox.SelectedIndexChanged += new System.EventHandler(this.itemNameComboBox_SelectedIndexChanged);
             // 
-            // availableQuantityLabel
+            // reOrderLevelLabel
             // 
-            this.availableQuantityLabel.AutoSize = true;
-            this.availableQuantityLabel.Location = new System.Drawing.Point(249, 133);
-            this.availableQuantityLabel.Name = "availableQuantityLabel";
-            this.availableQuantityLabel.Size = new System.Drawing.Size(0, 13);
-            this.availableQuantityLabel.TabIndex = 47;
+            this.reOrderLevelLabel.AutoSize = true;
+            this.reOrderLevelLabel.Location = new System.Drawing.Point(315, 134);
+            this.reOrderLevelLabel.Name = "reOrderLevelLabel";
+            this.reOrderLevelLabel.Size = new System.Drawing.Size(0, 13);
+            this.reOrderLevelLabel.TabIndex = 47;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(137, 133);
+            this.label5.Location = new System.Drawing.Point(203, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 46;
@@ -138,33 +139,36 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(384, 228);
+            this.AddButton.Location = new System.Drawing.Point(450, 229);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 45;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // companyComboBox
             // 
             this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(248, 66);
+            this.companyComboBox.Location = new System.Drawing.Point(314, 67);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(211, 21);
             this.companyComboBox.TabIndex = 44;
+            this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
             // 
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(248, 35);
+            this.categoryComboBox.Location = new System.Drawing.Point(314, 36);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(211, 21);
             this.categoryComboBox.TabIndex = 43;
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 165);
+            this.label4.Location = new System.Drawing.Point(190, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 42;
@@ -173,7 +177,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 101);
+            this.label3.Location = new System.Drawing.Point(224, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 41;
@@ -182,7 +186,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 69);
+            this.label2.Location = new System.Drawing.Point(231, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 40;
@@ -191,26 +195,85 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 38);
+            this.label1.Location = new System.Drawing.Point(233, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Category";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // stockOutDataGridView
+            // 
+            this.stockOutDataGridView.AllowUserToAddRows = false;
+            this.stockOutDataGridView.AllowUserToDeleteRows = false;
+            this.stockOutDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stockOutDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ItemName,
+            this.StockTransaction,
+            this.StockAvailable,
+            this.CompanyName,
+            this.CategoryName,
+            this.TransactionDate});
+            this.stockOutDataGridView.Location = new System.Drawing.Point(34, 268);
+            this.stockOutDataGridView.MultiSelect = false;
+            this.stockOutDataGridView.Name = "stockOutDataGridView";
+            this.stockOutDataGridView.ReadOnly = true;
+            this.stockOutDataGridView.Size = new System.Drawing.Size(644, 232);
+            this.stockOutDataGridView.TabIndex = 56;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            // 
+            // StockTransaction
+            // 
+            this.StockTransaction.HeaderText = "Quantity";
+            this.StockTransaction.Name = "StockTransaction";
+            this.StockTransaction.ReadOnly = true;
+            // 
+            // StockAvailable
+            // 
+            this.StockAvailable.HeaderText = "Available";
+            this.StockAvailable.Name = "StockAvailable";
+            this.StockAvailable.ReadOnly = true;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.HeaderText = "Company";
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.HeaderText = "Category";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            // 
+            // TransactionDate
+            // 
+            this.TransactionDate.HeaderText = "Date";
+            this.TransactionDate.Name = "TransactionDate";
+            this.TransactionDate.ReadOnly = true;
+            // 
             // StockOutUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 566);
+            this.ClientSize = new System.Drawing.Size(715, 566);
+            this.Controls.Add(this.stockOutDataGridView);
             this.Controls.Add(this.LostButton);
             this.Controls.Add(this.DamageButton);
             this.Controls.Add(this.SellButton);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.stockOutTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.stockInQuantityLabel);
-            this.Controls.Add(this.itemNameComboBox);
             this.Controls.Add(this.availableQuantityLabel);
+            this.Controls.Add(this.itemNameComboBox);
+            this.Controls.Add(this.reOrderLevelLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.companyComboBox);
@@ -221,7 +284,8 @@
             this.Controls.Add(this.label1);
             this.Name = "StockOutUI";
             this.Text = "StockOutUI";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockOutDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,12 +296,11 @@
         private System.Windows.Forms.Button LostButton;
         private System.Windows.Forms.Button DamageButton;
         private System.Windows.Forms.Button SellButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox stockOutTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label stockInQuantityLabel;
-        private System.Windows.Forms.ComboBox itemNameComboBox;
         private System.Windows.Forms.Label availableQuantityLabel;
+        private System.Windows.Forms.ComboBox itemNameComboBox;
+        private System.Windows.Forms.Label reOrderLevelLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.ComboBox companyComboBox;
@@ -246,5 +309,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.DataGridView stockOutDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockTransaction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockAvailable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransactionDate;
     }
 }
