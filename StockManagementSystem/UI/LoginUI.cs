@@ -23,31 +23,38 @@ namespace StockManagementSystem.UI
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            user.Username = usernameTextBox.Text;
-            if (user.Username == String.Empty)
+            try
             {
-                errorProvider.SetError(usernameTextBox, "Invalid credential provided!");
-                return;
-            }
-            user.Password = passwordTextBox.Text;
-            if (user.Password == String.Empty)
-            {
-                errorProvider.SetError(passwordTextBox, "Invalid credential provided!");
-                return;
-            }
+                user.Username = usernameTextBox.Text;
+                if (user.Username == String.Empty)
+                {
+                    errorProvider.SetError(usernameTextBox, "Invalid credential provided!");
+                    return;
+                }
+                user.Password = passwordTextBox.Text;
+                if (user.Password == String.Empty)
+                {
+                    errorProvider.SetError(passwordTextBox, "Invalid credential provided!");
+                    return;
+                }
 
-            bool isChecked = _loginManager.CheckCredential(user);
-            if (isChecked)
-            {
-                Reset(this.Controls);
-                MessageBox.Show("Successfully Logged In!");
-                Index index = new Index();
-                index.Show();
-                this.Hide();
+                bool isChecked = _loginManager.CheckCredential(user);
+                if (isChecked)
+                {
+                    Reset(this.Controls);
+                    MessageBox.Show("Successfully Logged In!");
+                    Index index = new Index();
+                    index.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Connection Time-Out!");
+                }
             }
-            else
+            catch (Exception exception)
             {
-                MessageBox.Show("Connection Time-Out!");
+                MessageBox.Show(exception.Message);
             }
         }
         private void Reset(Control.ControlCollection cc)

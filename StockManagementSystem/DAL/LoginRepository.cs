@@ -17,7 +17,7 @@ namespace StockManagementSystem.DAL
 
         public bool CheckCredential(User user)
         {
-            string query = @"SELECT * FROM Items USERS Username ='" + user.Username + "' and Password = '" + user.Password + "'";
+            string query = @"SELECT * FROM USERS WHERE Username ='" + user.Username + "' and Password = '" + user.Password + "'";
 
 
             SqlCommand command = new SqlCommand(query, _connection);

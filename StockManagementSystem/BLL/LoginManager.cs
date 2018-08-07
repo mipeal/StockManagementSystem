@@ -13,13 +13,15 @@ namespace StockManagementSystem.BLL
         LoginRepository _repository = new LoginRepository();
         public bool CheckCredential(User user)
         {
-            if (user == null && user.Username.Length < 3 && user.Password.Length<8)
+            if (user != null && user.Username.Length > 3 && user.Password.Length>6)
+            {
+                bool isChecked = _repository.CheckCredential(user);
+                return isChecked;
+            }
+            else
             {
                 throw new Exception("Sorry, Invalid Credential Inserted!");
             }
-
-            bool isChecked = _repository.CheckCredential(user);
-            return isChecked;
         }
     }
 }
