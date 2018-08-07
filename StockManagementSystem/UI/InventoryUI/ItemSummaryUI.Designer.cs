@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.itemSummaryDataGridView = new System.Windows.Forms.DataGridView();
             this.SearchButton = new System.Windows.Forms.Button();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
@@ -45,8 +46,10 @@
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).BeginInit();
             this.indexMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // itemSummaryDataGridView
@@ -193,6 +196,10 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Item Summary";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ItemSummaryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.itemSummaryDataGridView)).EndInit();
             this.indexMenuStrip.ResumeLayout(false);
             this.indexMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -84,7 +84,11 @@ namespace StockManagementSystem.UI
         private void Index_FormClosing(object sender, FormClosingEventArgs e)
         {
             var window = MessageBox.Show( "Close the window?", "Are you sure?", MessageBoxButtons.YesNo);
-
+            if (window == DialogResult.Yes)
+            {
+                Dispose();
+            }
+            else
             e.Cancel = (window == DialogResult.No);
         }
     }

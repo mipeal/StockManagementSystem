@@ -36,6 +36,11 @@ namespace StockManagementSystem.UI.InventoryUI
         {
             try
             {
+                if (_stockOutList == null)
+                {
+                    MessageBox.Show("Stock-out list is empty. Please add some item!");
+                    return;
+                }
                 foreach (var item in _stockOutList)
                 {
                     item.StockOutType = (int)StockOutTypes.Sell;
@@ -62,6 +67,11 @@ namespace StockManagementSystem.UI.InventoryUI
         {
             try
             {
+                if (_stockOutList == null)
+                {
+                    MessageBox.Show("Stock-out list is empty. Please add some item!");
+                    return;
+                }
                 foreach (var item in _stockOutList)
                 {
                     item.StockOutType = (int)StockOutTypes.Damage;
@@ -88,6 +98,11 @@ namespace StockManagementSystem.UI.InventoryUI
         {
             try
             {
+                if (_stockOutList == null)
+                {
+                    MessageBox.Show("Stock-out list is empty. Please add some item!");
+                    return;
+                }
                 foreach (var item in _stockOutList)
                 {
                     item.StockOutType = (int)StockOutTypes.Lost;

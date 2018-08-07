@@ -27,7 +27,17 @@ namespace StockManagementSystem.UI.InventoryUI
             {
                 #region Search Code
                 string fromDate = fromDatePicker.Text;
+                if (fromDate == String.Empty)
+                {
+                    MessageBox.Show("Stock-out list is empty. Please add some item!");
+                    return;
+                }
                 string toDate = toDatePicker.Text;
+                if (toDate == String.Empty)
+                {
+                    MessageBox.Show("Stock-out list is empty. Please add some item!");
+                    return;
+                }
                 #endregion
 
                 _dataTable = _inventoryManager.ViewSaleSummary(fromDate, toDate);

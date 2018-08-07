@@ -55,7 +55,17 @@ namespace StockManagementSystem.UI.InventoryUI
 
                 #region Search Code
                 int categoryId = Convert.ToInt32(categoryComboBox.SelectedValue);
+                if (categoryId<0)
+                {
+                    errorProvider.SetError(categoryComboBox, "Please select a category!");
+                    return;
+                }
                 int companyId = Convert.ToInt32(companyComboBox.SelectedValue);
+                if (companyId < 0)
+                {
+                    errorProvider.SetError(companyComboBox, "Please select a company!");
+                    return;
+                }
                 #endregion
 
                 _dataTable = _inventoryManager.SearchItemsSummary(categoryId,companyId);

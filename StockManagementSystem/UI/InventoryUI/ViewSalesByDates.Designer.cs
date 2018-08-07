@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toDatePicker = new System.Windows.Forms.DateTimePicker();
             this.fromDatePicker = new System.Windows.Forms.DateTimePicker();
             this.saleSummaryGridView = new System.Windows.Forms.DataGridView();
@@ -48,8 +49,10 @@
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.saleSummaryGridView)).BeginInit();
             this.indexMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // toDatePicker
@@ -223,6 +226,10 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "Sales  Summary";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ViewSalesByDates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saleSummaryGridView)).EndInit();
             this.indexMenuStrip.ResumeLayout(false);
             this.indexMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +278,6 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

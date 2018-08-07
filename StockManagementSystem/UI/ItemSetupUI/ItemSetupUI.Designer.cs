@@ -30,6 +30,7 @@ namespace StockManagementSystem.UI.ItemSetup
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SaveButton = new System.Windows.Forms.Button();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
@@ -50,7 +51,9 @@ namespace StockManagementSystem.UI.ItemSetup
             this.salesSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.indexMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveButton
@@ -218,6 +221,10 @@ namespace StockManagementSystem.UI.ItemSetup
             this.label5.TabIndex = 19;
             this.label5.Text = "Add  New  Item";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ItemSetupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +247,7 @@ namespace StockManagementSystem.UI.ItemSetup
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemSetupUI_FormClosing);
             this.indexMenuStrip.ResumeLayout(false);
             this.indexMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +280,6 @@ namespace StockManagementSystem.UI.ItemSetup
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

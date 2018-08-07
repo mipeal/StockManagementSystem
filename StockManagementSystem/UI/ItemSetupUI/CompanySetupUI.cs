@@ -35,7 +35,7 @@ namespace StockManagementSystem.UI.ItemSetup
                 company.Name = nameTextBox.Text;
                 if (company.Name == String.Empty || company.Name.Length < 2)
                 {
-                    errorProvider.SetError(nameTextBox, "Please provide a valid category!");
+                    errorProvider.SetError(nameTextBox, "Please provide a valid company!");
                 }
 
                 bool isAdded = _manager.Add(company);

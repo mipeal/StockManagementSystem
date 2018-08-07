@@ -32,14 +32,35 @@ namespace StockManagementSystem.UI.ItemSetup
             {
                 Item item = new Item();
                 item.CategoryId = Convert.ToInt32(categoryComboBox.SelectedValue);
+                if (item.CategoryId <0)
+                {
+                    errorProvider.SetError(categoryComboBox, "Please select a valid category!");
+                    return;
+                }
                 item.CompanyId = Convert.ToInt32(companyComboBox.SelectedValue);
+                if (item.CompanyId < 0)
+                {
+                    errorProvider.SetError(companyComboBox, "Please select a valid company!");
+                    return;
+                }
                 item.Name = itemNameTextBox.Text;
+                if (item.Name == String.Empty)
+                {
+                    errorProvider.SetError(itemNameTextBox, "Please provide a valid item name!");
+                    return;
+                }
                 item.ReOrderLevel = Convert.ToInt32(reOrderLevelTextBox.Text);
+                if (item.ReOrderLevel < 0)
+                {
+                    errorProvider.SetError(reOrderLevelTextBox, "Please provide a valid re-order level!");
+                    return;
+                }
 
                 bool isAdded = _itemManager.Add(item);
                 if (isAdded)
                 {
                     Reset(this.Controls);
+                    MessageBox.Show("Item Saved!");
                     itemNameTextBox.Focus();
                 }
                 else
